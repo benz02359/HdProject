@@ -34,5 +34,8 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
+    'firebase' => [
+        'database_url' => env('FB_DATABASE', 'https://hdpj-632ed.firebaseio.com/'),
+        'secret' => env('FB_DATABASE_KEY', 'bvAb0W9VxOA3kfBsP0TjoO9ONTk9ni8q2J5QLH5C'),
+    ]
 ];
