@@ -20,16 +20,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
-
-
-/* customer firebase js */
-function saveonclick(){
-
-}
-window.onload=function(){
-    var firebaseRef=firebase.database().ref("customer");
-    firebaseRef.once('value').then(function(dataSnapshot){
-        console.log(dataSnapshot.val());
-    });
-}
-

@@ -10,13 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('firetest.firebase');
-});
-//Route::resource('user','UserController');
 
-//Auth::routes();
-
-//Route::get('/', 'ChatsController@index');
-Route::get('messages', 'ChatsController@fetchMessages');
-Route::post('messages', 'ChatsController@sendMessage');
+Route::resource('user','UserController');

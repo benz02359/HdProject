@@ -22,8 +22,8 @@
                   @foreach($users as $row)
                   <tr>
                     <td>{{$row['id']}}</td>
-                    <td>{{$row['cus_name']}}</td>
-                    <!--<td>{{$row['lname']}}</td> -->
+                    <td>{{$row['fname']}}</td>
+                    <td>{{$row['lname']}}</td>
                     <td><a href="{{action('UserController@edit', $row['id'])}}" class="btn btn-warning">Edit<a></td>
                     <td>
                       <form class="delete_form" action="{{action('UserController@destroy',$row['id'])}}" method="post">

@@ -13,7 +13,7 @@ class customersController extends Controller
    */
   public function index()
   {
-    $customer = customers::all()->toArray();
+    $users = User::all()->toArray();
     return view('user.home',compact('users'));
   }
 
