@@ -61,16 +61,16 @@ $('#submitUser').on('click', function(){
     console.log(cus_name.value());
     console.log('info!!');
     
-    firebase.database().ref('customers' + userID).set({
+    firebase.database().ref('customers/' + userID).set({
         cus_id: cus_id+1,
         cus_name: cus_name,
-        pro_id: pro_id,
+        pro_id: pro_id
         
     });
     
     // Reassign lastID value
     lastIndex = userID;
-	$("#addUser input").val("");
+	    $("#addUser input").val("");
 });
 
 // Update Data
