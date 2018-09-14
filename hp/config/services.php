@@ -35,6 +35,11 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'firebase' => [
+        'api_key' => 'AIzaSyDiaUDP4dhP_FUbTXOFa-g7ugATxi9lmdI', // Only used for JS integration
+        'auth_domain' => 'hdpj-632ed.firebaseapp.com', // Only used for JS integration
+        //'database_url' => 'https://database_url.com/',
+        //'secret' => 'secret',
+        'storage_bucket' => 'hdpj-632ed.appspot.com', // Only used for JS integration
         'database_url' => env('FB_DATABASE', 'https://hdpj-632ed.firebaseio.com/'),
         'secret' => env('FB_DATABASE_KEY', 'bvAb0W9VxOA3kfBsP0TjoO9ONTk9ni8q2J5QLH5C'),
     ]
