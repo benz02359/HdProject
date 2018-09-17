@@ -1,4 +1,4 @@
-@extends('firetest.master')
+@extends('crudtest.app')
 
 @section('style')
 <style type="text/css">
@@ -24,17 +24,17 @@
                 <div class="card-body">
                     <form id="addUser" class="" method="POST" action="">
                     	<div class="form-group">
-                            <label for="cus_name" class="col-md-12 col-form-label">Name</label>
+                            <label for="first_name" class="col-md-12 col-form-label">First Name</label>
 
                             <div class="col-md-12">
-                                <input id="cus_name" type="text" class="form-control" name="cus_name" value="" required autofocus>
+                                <input id="first_name" type="text" class="form-control" name="first_name" value="" required autofocus>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="pro_id" class="col-md-12 col-form-label">Program</label>
+                            <label for="last_name" class="col-md-12 col-form-label">Last Name</label>
 
                             <div class="col-md-12">
-                                <input id="pro_id" type="text" class="form-control" name="pro_id" value="" required autofocus>
+                                <input id="last_name" type="text" class="form-control" name="last_name" value="" required autofocus>
                             </div>
                         </div>
                         <div class="form-group">
@@ -61,9 +61,8 @@
                 <div class="card-body">
                     <table class="table table-bordered">
                         <tr>
-                            <th>id</th>
-                            <th>Name</th>
-                            <th>Program</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th width="180" class="text-center">Action</th>
                         </tr>
                         <tbody id="tbody">

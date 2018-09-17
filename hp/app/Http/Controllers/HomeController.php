@@ -30,4 +30,8 @@ class HomeController extends Controller
     {
         return view('realtimecrud.crud');
     }
+    public function solution()
+    {
+        return view('solution.home');
+    }
 }

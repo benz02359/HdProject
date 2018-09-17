@@ -10,13 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*Route::get('/', function () {
-    return view('firetest.firebase');
-});*/
+Route::get('/', function () {
+    return view('layouts.app');
+});
 //Route::resource('user','UserController');
 
 //Auth::routes();
-Route::get('/', 'HomeController@users');
+Route::get('/customers', 'HomeController@users');
+//Route::get('/test', 'HomeController@test');
 //Route::get('/', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
