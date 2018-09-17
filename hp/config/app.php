@@ -162,6 +162,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         SafeStudio\Firebase\FirebaseServiceProvider::class,
+
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class
     ],
 
     /*
@@ -211,6 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Firebase' => SafeStudio\Firebase\Facades\FirebaseFacades::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
 
     ],
 
