@@ -1,0 +1,19 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "Entry": {
+      ".read": true,
+      ".write": true,
+      "$child": {
+        ".read": true,
+        ".write": true,
+        "views": {
+          ".read": true,
+          ".write": true,
+          ".validate": "data.val() == null || newData.val() == data.val() || newData.val() == data.val()+1"
+        }
+      }
+    }
+  }
+}

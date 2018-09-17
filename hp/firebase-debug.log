@@ -1,0 +1,24 @@
+[debug] [2018-09-17T11:06:05.685Z] ----------------------------------------------------------------------
+[debug] [2018-09-17T11:06:05.688Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sabunnga\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-17T11:06:05.688Z] CLI Version:   4.2.1
+[debug] [2018-09-17T11:06:05.688Z] Platform:      win32
+[debug] [2018-09-17T11:06:05.688Z] Node Version:  v8.11.3
+[debug] [2018-09-17T11:06:05.691Z] Time:          Mon Sep 17 2018 18:06:05 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-09-17T11:06:05.691Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-17T11:06:05.703Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-17T11:06:05.704Z] > authorizing via signed-in user
+[debug] [2018-09-17T11:06:05.707Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hdpj-632ed  
+ 
+[debug] [2018-09-17T11:06:06.734Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-17T11:06:06.736Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hdpj-632ed  
+ 
+[debug] [2018-09-17T11:06:08.104Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\xampp\htdocs\HdProject\hp'...
+[info] 
+[debug] [2018-09-17T11:06:08.106Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/120261714092/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-17T11:06:08.646Z] <<< HTTP RESPONSE 200
+[info] i  hosting[hdpj-632ed]: Serving hosting files from: dist
+[info] +  hosting[hdpj-632ed]: Local server: http://localhost:5000
