@@ -68,8 +68,7 @@
     
                 html = 
                     '<div class="col-md-4">' +
-                    '<a href="{{ route('detail',[$sid=>sid]) 
-                    }}" style="text-decoration:none!important;">' +
+                    '<a href="{{ route('detail',[$sid=>sid])}}" style="text-decoration:none!important;">' +
                     '<div class="panel panel-info">' +
                     '<div class="panel-heading">' + 
                     '<h3 class="panel-title">' + excerpt(entry.title, 140) + '</h3>' +
