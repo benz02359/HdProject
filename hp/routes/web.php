@@ -16,7 +16,8 @@
 //Route::resource('user','UserController');
 
 //Auth::routes();
-Route::get('/solution', 'HomeController@solution');
+Route::get('/solution', 'HomeController@solution')->name('solution');
+Route::get('/detail/{sid}','HomeController@detail')->name('detail');
 Route::get('/customers', 'HomeController@users');
 //Route::get('/test', 'HomeController@test');
 //Route::get('/', 'ChatsController@index');

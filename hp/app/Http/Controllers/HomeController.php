@@ -32,6 +32,12 @@ class HomeController extends Controller
     }
     public function solution()
     {
-        return view('solution.home');
+        return view('admin.solution');
+    }
+    public function detail($sid)
+    {
+        
+        return view('admin.solutiondetail')->withsid($sid);
+        
     }
 }
