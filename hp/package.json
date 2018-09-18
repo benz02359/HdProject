@@ -33,6 +33,6 @@
   "author": "benz",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^5.4.2"
+    "firebase": "^5.5.0"
   }
 }
