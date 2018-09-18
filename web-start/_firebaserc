@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "firebase serve --only hosting": "friendly-chat-a8727",
+    " firebase": "friendly-chat-a8727",
+    "test-chat": "chat-helpdesk-2e860",
+    "messages": "friendly-chat-a8727"
+  }
+}

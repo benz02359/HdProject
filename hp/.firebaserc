@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "hdpj-632ed"
+    "default": "hdpj-632ed",
+    "learning": "hdpj-632ed"
   }
 }

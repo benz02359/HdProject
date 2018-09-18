@@ -1,0 +1,36 @@
+[debug] [2018-09-18T19:02:02.709Z] ----------------------------------------------------------------------
+[debug] [2018-09-18T19:02:02.711Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\grean\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-18T19:02:02.712Z] CLI Version:   4.2.1
+[debug] [2018-09-18T19:02:02.712Z] Platform:      win32
+[debug] [2018-09-18T19:02:02.712Z] Node Version:  v8.9.1
+[debug] [2018-09-18T19:02:02.712Z] Time:          Wed Sep 19 2018 02:02:02 GMT+0700 (เวลามาตรฐานเอเชียอาคเนย์)
+[debug] [2018-09-18T19:02:02.713Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-18T19:02:02.735Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-18T19:02:02.735Z] > authorizing via signed-in user
+[debug] [2018-09-18T19:02:02.737Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-18T19:02:02.739Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-18T19:02:02.984Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T19:02:03.046Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hdpj-632ed  
+ 
+[debug] [2018-09-18T19:02:04.053Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T19:02:04.054Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hdpj-632ed  
+ 
+[debug] [2018-09-18T19:02:05.393Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\xampp\htdocs\HdProject\web-start'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-18T19:02:08.682Z] Fetching environment
+[debug] [2018-09-18T19:02:08.686Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/120261714092:getServerAppConfig  
+ 
+[debug] [2018-09-18T19:02:08.687Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/120261714092/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-18T19:02:09.070Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-18T19:02:09.071Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-18T19:02:09.245Z] <<< HTTP RESPONSE 200
+[info] i  hosting[hdpj-632ed]: Serving hosting files from: ./
+[info] +  hosting[hdpj-632ed]: Local server: http://localhost:5000
+[debug] [2018-09-18T19:02:12.745Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
