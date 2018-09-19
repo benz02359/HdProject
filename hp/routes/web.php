@@ -17,9 +17,9 @@
 
 //Auth::routes();
 Route::get('/home', 'HomeController@home')->name('home');
-Route::get('/admin', 'HomeController@solution')->name('admin');
-Route::get('/detail/{sid}','HomeController@detail')->name('detail');
-Route::get('/customers', 'HomeController@users');
+Route::get('admin', 'HomeController@solution')->name('admin');
+//Route::get('/detail/{sid}','HomeController@detail')->name('detail');
+//Route::get('/customers', 'HomeController@users');
 //Route::get('/test', 'HomeController@test');
 //Route::get('/', 'ChatsController@index');
 //Route::get('messages', 'ChatsController@fetchMessages');

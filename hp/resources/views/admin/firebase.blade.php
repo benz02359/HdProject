@@ -20,17 +20,18 @@
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-storage.js"></script>
     <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDiaUDP4dhP_FUbTXOFa-g7ugATxi9lmdI",
-        authDomain: "hdpj-632ed.firebaseapp.com",
-        databaseURL: "https://hdpj-632ed.firebaseio.com",
-        projectId: "hdpj-632ed",
-        //storageBucket: "hdpj-632ed.appspot.com",
-        messagingSenderId: "120261714092"
-    };
-    firebase.initializeApp(config);
-    var database = firebase.database();
+	
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDiaUDP4dhP_FUbTXOFa-g7ugATxi9lmdI",
+    authDomain: "hdpj-632ed.firebaseapp.com",
+    databaseURL: "https://hdpj-632ed.firebaseio.com",
+    projectId: "hdpj-632ed",
+    storageBucket: "hdpj-632ed.appspot.com",
+    messagingSenderId: "120261714092"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
 
 var lastIndex = 0;
 
