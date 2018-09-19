@@ -11,12 +11,13 @@
 |
 */
 /*Route::get('/', function () {
-    return view('layouts.app');
+    return view('admin.solution');
 });*/
 //Route::resource('user','UserController');
 
 //Auth::routes();
-Route::get('/solution', 'HomeController@solution')->name('solution');
+Route::get('/home', 'HomeController@home')->name('home');
+Route::get('/admin', 'HomeController@solution')->name('admin');
 Route::get('/detail/{sid}','HomeController@detail')->name('detail');
 Route::get('/customers', 'HomeController@users');
 //Route::get('/test', 'HomeController@test');
@@ -32,6 +33,6 @@ Route::get('/customers', 'HomeController@users');
     });
 });*/
 
-Route::get('/', function () {
+Route::get('/w', function () {
     return view('admintest.welcome');
 });

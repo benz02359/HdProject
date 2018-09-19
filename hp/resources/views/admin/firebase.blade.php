@@ -10,12 +10,15 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <script type="text/javascript" src="{{ asset('/js/cus.js') }}"></script>
 
     
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-storage.js"></script>
     <script>
     // Initialize Firebase
     var config = {
@@ -32,21 +35,19 @@
 var lastIndex = 0;
 
 // Get Data
-firebase.database().ref('customers/').on('value', function(snapshot) {
+firebase.database().ref('solution/').on('value', function(snapshot) {
     var value = snapshot.val();
     var htmls = [];
-    $.each(value, function( value){
+    $.each(value, function(index, value){
     	if(value) {
-			htmls.push('<tr>\
-				<td>'+ value.cus_id +'</td>\
-        		<td>'+ value.cus_name +'</td>\
-        		<td>'+ value.pro_id +'</td>\
+    		htmls.push('<tr>\
+        		<td>'+ value.title +'</td>\
+        		<td>'+ value.des +'</td>\
+                <td>'+ value.program +'</td>\
         		<td><a data-toggle="modal" data-target="#update-modal" class="btn btn-outline-success updateData" data-id="'+index+'">Update</a>\
         		<a data-toggle="modal" data-target="#remove-modal" class="btn btn-outline-danger removeData" data-id="'+index+'">Delete</a></td>\
-			</tr>');
-			
-		}
-		    	
+        	</tr>');
+    	}    	
     	lastIndex = index;
     });
     $('#tbody').html(htmls);
@@ -56,26 +57,23 @@ firebase.database().ref('customers/').on('value', function(snapshot) {
 
 // Add Data
 $(document).ready(function(){
-$('#submitUser').on('click', function(){
-	//var v = snapshot.val();
-	var cusid = parseInt(lastIndex);
+$("#submitUser").on('click', function(){
+    alert("The paragraph was clicked.");
 	var values = $("#addUser").serializeArray();
-	var cus_name = values[0].value;
-	var pro_id = values[1].value;
-	var cus_id = cusid+1;
-    var userID = lastIndex+1;
-    
-    
-    firebase.database().ref('/customers/' + userID).set({
-        cus_id : cus_id,
-        cus_name: cus_name,
-        pro_id: pro_id,
-        
+	var title = values[0].value;
+	var des = values[1].value;
+    var program = values[2].value;
+	var userID = lastIndex+1;
+
+    firebase.database().ref('/solution/' + userID).set({
+        title: title,
+        des: des,
+        program: program,
     });
-    
+
     // Reassign lastID value
     lastIndex = userID;
-	    $("#addUser input").val("");
+	$("#addUser input").val("");
 });
 });
 // Update Data
@@ -83,25 +81,27 @@ var updateID = 0;
 $(document).ready(function(){
 $('body').on('click', '.updateData', function() {
 	updateID = $(this).attr('data-id');
-	firebase.database().ref('customers/' + updateID).on('value', function(snapshot) {
+	firebase.database().ref('/solution/' + updateID).on('value', function(snapshot) {
 		var values = snapshot.val();
 		var updateData = '<div class="form-group">\
-				<label for="cus_id" class="col-md-12 col-form-label">ID</label>\
+		        <label for="title" class="col-md-12 col-form-label">Title</label>\
 		        <div class="col-md-12">\
-		            <input id="cus_id" type="text" class="form-control" name="cus_id" value="'+values.cus_id+'" required autofocus>\
-		        </div>\
-		        <label for="cus_name" class="col-md-12 col-form-label">Name</label>\
-		        <div class="col-md-12">\
-		            <input id="cus_name" type="text" class="form-control" name="cus_name" value="'+values.cus_name+'" required autofocus>\
+		            <input id="title" type="text" class="form-control" name="title" value="'+values.title+'" required autofocus>\
 		        </div>\
 		    </div>\
 		    <div class="form-group">\
-		        <label for="pro_id" class="col-md-12 col-form-label">Program</label>\
+		        <label for="des" class="col-md-12 col-form-label">Description</label>\
 		        <div class="col-md-12">\
-		            <input id="pro_id" type="text" class="form-control" name="pro_id" value="'+values.pro_id+'" required autofocus>\
+		            <input id="des" type="text" class="form-control" name="des" value="'+values.des+'" required autofocus>\
+		        </div>\
+		    </div>\
+            <div class="form-group">\
+		        <label for="program" class="col-md-12 col-form-label">Program</label>\
+		        <div class="col-md-12">\
+		            <input id="program" type="text" class="form-control" name="program" value="'+values.program+'" required autofocus>\
 		        </div>\
 		    </div>';
-			
+
 		    $('#updateBody').html(updateData);
 	});
 });
@@ -109,22 +109,20 @@ $('body').on('click', '.updateData', function() {
 $('.updateUserRecord').on('click', function() {
 	var values = $(".users-update-record-model").serializeArray();
 	var postData = {
-		cus_id : values[0].value,
-	    cus_name : values[1].value,
-	    pro_id : values[2].value,
+	    first_name : values[0].value,
+	    last_name : values[1].value,
 	};
 
 	var updates = {};
-	updates['/customers/' + updateID] = postData;
+	updates['/users/' + updateID] = postData;
 
 	firebase.database().ref().update(updates);
 
 	$("#update-modal").modal('hide');
 });
-});
+
 
 // Remove Data
-$(document).ready(function(){
 $("body").on('click', '.removeData', function() {
 	var id = $(this).attr('data-id');
 	$('body').find('.users-remove-record-model').append('<input name="id" type="hidden" value="'+ id +'">');
@@ -133,7 +131,7 @@ $("body").on('click', '.removeData', function() {
 $('.deleteMatchRecord').on('click', function(){
 	var values = $(".users-remove-record-model").serializeArray();
 	var id = values[0].value;
-	firebase.database().ref('/customers/' + id).remove();
+	firebase.database().ref('solution/' + id).remove();
     $('body').find('.users-remove-record-model').find( "input" ).remove();
 	$("#remove-modal").modal('hide');
 });
@@ -141,8 +139,7 @@ $('.remove-data-from-delete-form').click(function() {
 	$('body').find('.users-remove-record-model').find( "input" ).remove();
 });
 });
-    </script>
-        
+</script>	
 </head>
 <body>
     @yield('content')

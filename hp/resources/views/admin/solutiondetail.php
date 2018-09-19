@@ -58,17 +58,17 @@
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script>
         // firebase config
-        var config = {
-        apiKey: "AIzaSyDiaUDP4dhP_FUbTXOFa-g7ugATxi9lmdI",
-        authDomain: "hdpj-632ed.firebaseapp.com",
-        databaseURL: "https://hdpj-632ed.firebaseio.com",
-        projectId: "hdpj-632ed",
-        //storageBucket: "hdpj-632ed.appspot.com",
-        messagingSenderId: "120261714092"
-        };
-        firebase.initializeApp(config);
+            var config = {
+            apiKey: "AIzaSyDiaUDP4dhP_FUbTXOFa-g7ugATxi9lmdI",
+            authDomain: "hdpj-632ed.firebaseapp.com",
+            databaseURL: "https://hdpj-632ed.firebaseio.com",
+            projectId: "hdpj-632ed",
+            //storageBucket: "hdpj-632ed.appspot.com",
+            messagingSenderId: "120261714092"
+            };
+            firebase.initializeApp(config);
         /////////////////////////////////////
-        var entry_id =  {{$sid}} ;
+        var entry_id = $_GET('id');
         if (entry_id) {
             var added_views = false;
             var Entry = firebase.database().ref('/solution/').child(entry_id);
@@ -92,7 +92,7 @@
                     }
                     
                 } else { // content not found
-                    window.location.href = '{{ route('solution') }}';
+                    window.location.href = '{{ route('home') }}';
                 }
             });
             

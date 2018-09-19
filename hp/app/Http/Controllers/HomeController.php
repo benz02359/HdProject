@@ -30,14 +30,18 @@ class HomeController extends Controller
     {
         return view('realtimecrud.crud');
     }
-    public function solution()
+    public function home()
     {
         return view('admin.solution');
     }
-    public function detail($sid)
+    public function solution()
+    {
+        return view('admin.adminsolution');
+    }
+    public function detail()
     {
         
-        return view('admin.solutiondetail')->withsid($sid);
+        return view('admin.adminsolution');
         
     }
 }
