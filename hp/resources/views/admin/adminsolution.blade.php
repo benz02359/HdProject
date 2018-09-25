@@ -46,7 +46,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <strong>All Solution</strong>
+                            <strong>All Solutions</strong>
                         </div>
                     </div>
                 </div>
