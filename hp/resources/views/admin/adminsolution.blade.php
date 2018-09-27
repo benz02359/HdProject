@@ -79,7 +79,7 @@
                     <button type="button" class="close remove-data-from-delete-form" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <h4>You Want You Sure Delete This Record?</h4>
+                    <h4>You Want You Sure Delete This Solution?</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default waves-effect remove-data-from-delete-form" data-dismiss="modal">Close</button>
